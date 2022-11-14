@@ -10,7 +10,7 @@ mongoose.connect("mongodb://localhost/todo_list", {
     useUnifiedTopology: true,
 }),
 
-//middlewares
+//middleware
 app.use(express.urlencoded(
     {extended: true}
 ));
@@ -26,4 +26,4 @@ app.use(require ("./routes/todoRoute"));
 
 //server configuration
 app.listen(3000, () =>
-console.log("Server is listening aat port: 3000"))
+console.log("Server is listening at port: 3000"))

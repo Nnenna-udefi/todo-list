@@ -1,13 +1,11 @@
-const todo = require("../models/todo");
+const router = require("express").Router();
+const Todo = require("../models/todo");
 
-const router = require("express").Router()
 
+router.get("/", async(req, res) => {
 
-router.get("/", (req, res) => {
-
-    const allTodo = await todo.find()
-    res.render("view")
+    const allTodo = await Todo.find()
+    res.render("index", {todo: allTodo})
 })
-    // View To-Do
 
     module.exports = router;
