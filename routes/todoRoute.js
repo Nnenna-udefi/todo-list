@@ -14,6 +14,8 @@ router.post('/todo', (req, res) => {
         console.log("Successfully added todo")
         res.redirect("/")
     })
+
+    .catch((err) => console.log(err));
     // toDo.find({}, (err, toDos) => {
     //     if (err) {
     //         res.status(500).json({
@@ -93,4 +95,12 @@ router.delete('/todo', (req, res) => {
                     err
                 });
             } else {
-                res
+                res.status(200).json({
+                    message: 'All To-Do has been removed',
+                    toDo
+                });
+            }
+        });
+    });
+
+    module.exports = router;
