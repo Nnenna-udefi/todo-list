@@ -3,8 +3,15 @@ const router = require('express').Router();
 const Todo = require("../models/todo");
 
 router.post('/add/todo', (req, res) => {
-    const { todo } = req.body;
-    const newTodo = new Todo({ todo });
+    //const { todo } = req.body;
+    //const newTodo = new Todo({ todo });
+
+    const {title, description, timestamps} = req.body;
+    const newTodo = new Todo ({
+        title,
+        description,
+        timestamps
+    })
 
 //save the todo
     newTodo.save()

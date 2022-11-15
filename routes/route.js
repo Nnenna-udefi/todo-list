@@ -5,7 +5,7 @@ const Todo = require("../models/todo");
 router.get("/", async(req, res) => {
 
     const allTodo = await Todo.find()
-    res.render("index", {todo: allTodo})
+    res.render("index", {title : allTodo})
 })
 
     module.exports = router;
